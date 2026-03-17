@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Assignment</title>
+  <link rel="stylesheet" href="./css/Assignment-19.css"/>
+</head>
+
+<body>
+
+  <h1>Bulb & Password Toggle</h1>
+
+
+  <div class="box">
+    <h3>Bulb Toggle</h3>
+    <img id="bulb" src=../images/Off-Bulb.png>
+    <br>
+    <button onclick="toggleBulb()">ON / OFF</button>
+  </div>
+
+
+  <div class="box">
+    <h3>Password Show / Hide</h3>
+    <input type="password" id="password" placeholder="Enter password">
+    <br>
+    <button onclick="togglePassword(this)">Show</button>
+  </div>
+
+  <script>
+   //Bulb
+    let isOn = false;
+
+    function toggleBulb() {
+      let bulb = document.getElementById("bulb");
+
+      if (isOn) {
+        bulb.src = "./images/Off-Bulb.png";
+        isOn = false;
+      } else {
+        bulb.src = "./images/on-Bulb.png";
+        isOn = true;
+      }
+    }
+
+   //password
+    function togglePassword(btn) {
+      let pass = document.getElementById("password");
+
+      if (pass.type === "password") {
+        pass.type = "text";
+        btn.innerText = "Hide";
+      } else {
+        pass.type = "password";
+        btn.innerText = "Show";
+      }
+    }
+  </script>
+
+</body>
+</html>
